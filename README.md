@@ -24,5 +24,7 @@
     rails generate model Bike_Order quantity:integer unit_price:decimal tax_rate:decimal
     rails generate model Order customer_id:integer date:date
     rails generate model Cart customer_id:integer
+    rails generate model Bike_Cart bike_id:integer cart_id:integer
     rails generate model Customer first_name:string lastname:string email:string password:string birthday:date address:string province_id:integer
     rails generate model Customer first_name:string lastname:string email:string password:string birthday:date address:string province_id:integer
+    rails generate model Province name:string tax_type:string pst:decimal gst:decimal hst:decimal
