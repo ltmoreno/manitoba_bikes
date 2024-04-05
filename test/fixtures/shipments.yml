@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipping_number: MyString
+  date: 2024-04-05
+
+two:
+  shipping_number: MyString
+  date: 2024-04-05
