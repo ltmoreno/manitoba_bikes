@@ -28,3 +28,9 @@
     rails generate model Customer first_name:string lastname:string email:string password:string birthday:date address:string province_id:integer
     rails generate model Customer first_name:string lastname:string email:string password:string birthday:date address:string province_id:integer
     rails generate model Province name:string tax_type:string pst:decimal gst:decimal hst:decimal
+
+5.  Active Storage
+    Add this to gemfile
+    gem "image_processing", ">= 1.2"
+
+    Setup
