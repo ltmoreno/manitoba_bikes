@@ -1,0 +1,2 @@
+class BikeShipment < ApplicationRecord
+end

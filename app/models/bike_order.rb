@@ -1,0 +1,2 @@
+class BikeOrder < ApplicationRecord
+end
