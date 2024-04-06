@@ -35,6 +35,9 @@ bikes_and_beyond.each do |b|
       description: b["description"]
     )
 
+    downloaded_image = URI.open(b["photo-src"])
+    bike.photo.attach(io: downloaded_image, filename: "#{[brand.name, bike.model, bike.id].join('-')}.jpg")
+
     unless bike&.valid?
       puts "Invalid bike - #{bike.errors.full_messages}"
     end
