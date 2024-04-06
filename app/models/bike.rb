@@ -5,9 +5,10 @@ class Bike < ApplicationRecord
   belongs_to :brand
   belongs_to :category
   validates :model, presence: true
+  has_one_attached :photo
 
   def self.ransackable_attributes(auth_object = nil)
-    ["brand_id", "category_id", "color", "created_at", "description", "id", "id_value", "model", "price", "updated_at"]
+    ["brand_id", "category_id", "color", "created_at", "description", "id", "id_value", "model", "price", "updated_at", "photo", "photo_attachment_id", "photo_blob_id_eq"]
   end
 
   def self.ransackable_associations(auth_object = nil)
