@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>ManitobaBikes</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= render partial: 'common/head/head-meta' %>
+
+    <title>Manitoba Bikes</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%# <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%# <%= javascript_importmap_tags %>
+
+    <link href="../assets/libs/slick-carousel/slick/slick.css" rel="stylesheet" />
+    <link href="../assets/libs/slick-carousel/slick/slick-theme.css" rel="stylesheet" />
+    <link href="../assets/libs/tiny-slider/dist/tiny-slider.css" rel="stylesheet" />
+
+    <%= render partial: 'common/head/head-links' %>
+    <%= render partial: 'common/head/analytics-code' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'common/navbar' %>
+
+    <main>
+      <%= yield %>
+    </main>
+    <%= render partial: 'common/scripts' %>
   </body>
 </html>
