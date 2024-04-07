@@ -46,7 +46,11 @@ gem "image_processing", "~> 1.2"
 
 gem 'activeadmin' # Admin dashboard
 gem 'devise'      # Authentication library
-gem 'sassc'
+gem 'sassc-rails', '~> 2.0'
+gem 'sassc', '~> 2.4'
+
+gem 'bootstrap', '~> 5.3.0'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

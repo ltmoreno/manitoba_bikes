@@ -1,7 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
+<%= render partial: 'common/navbar' %>
 <% if @page %>
   <%= render @page %>
 <% else %>
-  <p> 404, Page not found </p>
+<%= %>
+ <%= render partial: 'common/404'%>
 <% end %>

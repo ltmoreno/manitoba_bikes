@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'bikes/Bikes'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,5 +9,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get '/pages/:permalink' => "pages#permalink", as: 'permalink'
   # Defines the root path route ("/")
-  # root "home#index"
+  root "bikes#index"
+
+  match '*unmatched', to: 'application#not_found_method', via: :all
 end
