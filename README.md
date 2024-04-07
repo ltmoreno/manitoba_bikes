@@ -33,4 +33,5 @@
     Add this to gemfile
     gem "image_processing", ">= 1.2"
 
-    Setup
+    Install vips
+    sudo apt install libvips
