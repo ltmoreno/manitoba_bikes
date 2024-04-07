@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "bikes#index"
 
-  match '*unmatched', to: 'application#not_found_method', via: :all
+  ### This next line will make the images not visible
+  #match '*unmatched', to: 'application#not_found_method', via: :all
 end

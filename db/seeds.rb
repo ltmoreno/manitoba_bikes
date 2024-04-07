@@ -1,6 +1,5 @@
 require "csv"
 # Delete tables before seeding
-
 AdminUser.delete_all
 Brand.destroy_all
 Category.destroy_all
@@ -36,7 +35,7 @@ bikes_and_beyond.each do |b|
     )
 
     downloaded_image = URI.open(b["photo-src"])
-    bike.photo.attach(io: downloaded_image, filename: "#{[brand.name, bike.model, bike.id].join('-')}.jpg")
+    bike.photo.attach(io: downloaded_image, filename: "#{[brand.name, bike.id].join('-')}.jpg")
 
     unless bike&.valid?
       puts "Invalid bike - #{bike.errors.full_messages}"
