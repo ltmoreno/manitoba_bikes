@@ -2,10 +2,10 @@ require "csv"
 # Delete tables before seeding
 
 AdminUser.delete_all
-Brand.delete_all
-Category.delete_all
-Bike.delete_all
-Province.delete_all
+Brand.destroy_all
+Category.destroy_all
+Bike.destroy_all
+Province.destroy_all
 
 AdminUser.create!(email: ENV['admin_email'], password: ENV['admin_password'], password_confirmation: ENV['admin_password']) if Rails.env.development?
 

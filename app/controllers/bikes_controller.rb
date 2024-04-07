@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
-  def Bikes
+  def index
+    @bikes = Bike.all
   end
 end

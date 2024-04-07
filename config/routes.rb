@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get '/pages/:permalink' => "pages#permalink", as: 'permalink'
   # Defines the root path route ("/")
   root "bikes#index"
+
+  match '*unmatched', to: 'application#not_found_method', via: :all
 end
