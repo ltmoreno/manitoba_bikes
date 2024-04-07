@@ -25,3 +25,6 @@ module ManitobaBikes
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+# Use Vips for processing variants.
+Rails.application.config.active_storage.variant_processor = :vips
