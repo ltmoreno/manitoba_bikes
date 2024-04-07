@@ -12,8 +12,6 @@
               <!-- img -->
               <div class="d-lg-flex align-items-center">
                   <%= image_tag("about/about-icons-1.png", class: "img-fluid", alt: "Bike Icon") %>
-
-                  <img src="../assets/images/about/about-icons-1.svg" alt="" class="img-fluid" />
                   <!-- text -->
                   <div class="ms-lg-4">
                     <h1 class="fs-2 mb-1">Welcome to Manitoba Bikes</h1>
@@ -56,9 +54,9 @@
                 <div class="card card-product">
                     <div class="card-body text-center py-8">
                       <!-- img -->
-                      <%= image_tag url_for(Bike.first.photo), class:"mb-3", alt: "#{c.name} bike photo" %>
+                      <%= image_tag c.bikes.first.photo.variant(:thumb), class:"mb-3", alt: "#{c.name} bike photo" %>
                       <!-- text -->
-                      <div class="text-truncate"><%= Bike.first.model %></div>
+                      <div class="text-truncate"><%= c.name %></div>
                     </div>
                 </div>
               </a>
@@ -67,6 +65,33 @@
         </div>
     </div>
   </section>
+  <!-- Category Section Start-->
+  <section class="mb-lg-10 mt-lg-14 my-8">
+    <div class="container">
+        <div class="row">
+          <div class="col-12 mb-6">
+              <h3 class="mb-0">Featured Categories</h3>
+          </div>
+        </div>
+        <div class="category-slider">
+          <% get_categories.each do |c| %>
+          <div class="item">
+              <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                <div class="card card-product mb-lg-4">
+                    <div class="card-body text-center py-8">
+                      <%= image_tag c.bikes.first.photo.variant(:thumb), class:"mb-3 img-fluid", alt: "#{c.name} bike photo" %>
+
+                      <div class="text-truncate"><%= c.name %></div>
+                    </div>
+                </div>
+              </a>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </section>
+  <!-- Category Section End-->
+
   <!-- section -->
   <section>
     <div class="container">
@@ -92,7 +117,7 @@
                       </div>
                       <!-- img -->
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-15.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-15.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <!-- action btn -->
                       <div class="card-product-action">
@@ -162,7 +187,7 @@
                           <span class="badge bg-success">14%</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-16.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-16.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <!-- action btn -->
                       <div class="card-product-action">
@@ -225,7 +250,7 @@
                 <div class="card-body">
                     <div class="text-center position-relative">
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-17.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-17.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
 
                       <!-- action btn -->
                       <div class="card-product-action">
@@ -294,7 +319,7 @@
                           <span class="badge bg-danger">Hot</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-18.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-18.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -358,7 +383,7 @@
                 <div class="card-body">
                     <div class="text-center position-relative">
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-19.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-19.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -427,7 +452,7 @@
                       </div>
 
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-15.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-15.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -494,7 +519,7 @@
                           <span class="badge bg-success">14%</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-16.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-16.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -554,7 +579,7 @@
                 <div class="card-body">
                     <div class="text-center position-relative">
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-17.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-17.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -622,7 +647,7 @@
                           <span class="badge bg-danger">Hot</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-18.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-18.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -685,7 +710,7 @@
                 <div class="card-body">
                     <div class="text-center position-relative">
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-19.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-19.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -765,7 +790,7 @@
                           <span class="badge bg-danger">Sale</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-1.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-1.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -830,7 +855,7 @@
                           <span class="badge bg-success">14%</span>
                       </div>
 
-                      <a href="#!"><img src="../assets/images/products/product-img-2.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-2.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -889,7 +914,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-3.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-3.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -955,7 +980,7 @@
                           <span class="badge bg-danger">Hot</span>
                       </div>
 
-                      <a href="#!"><img src="../assets/images/products/product-img-4.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-4.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1017,7 +1042,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-5.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-5.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1083,7 +1108,7 @@
                           <span class="badge bg-danger">Sale</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-6.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-6.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1144,7 +1169,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-7.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-7.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1203,7 +1228,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-8.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-8.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1265,7 +1290,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-9.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-9.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1327,7 +1352,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-10.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-10.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="bi bi-eye"></i></a>
@@ -1403,7 +1428,7 @@
                           <span class="badge bg-danger">Sale</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-1.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-1.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
 
                       <div class="card-product-action">
@@ -1469,7 +1494,7 @@
                           <span class="badge bg-success">14%</span>
                       </div>
 
-                      <a href="#!"><img src="../assets/images/products/product-img-2.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-2.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1528,7 +1553,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-3.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-3.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1594,7 +1619,7 @@
                           <span class="badge bg-danger">Hot</span>
                       </div>
 
-                      <a href="#!"><img src="../assets/images/products/product-img-4.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-4.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1656,7 +1681,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-5.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-5.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1722,7 +1747,7 @@
                           <span class="badge bg-danger">Sale</span>
                       </div>
                       <!-- img -->
-                      <a href="#!"><img src="../assets/images/products/product-img-6.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-6.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1783,7 +1808,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-7.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-7.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1843,7 +1868,7 @@
                 <div class="card-body">
                     <!-- text -->
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-8.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-8.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1905,7 +1930,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-9.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-9.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal">
@@ -1967,7 +1992,7 @@
               <div class="card card-product">
                 <div class="card-body">
                     <div class="text-center position-relative">
-                      <a href="#!"><img src="../assets/images/products/product-img-10.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
+                      <a href="#!"><img src="../assets/products/product-img-10.jpg" alt="Grocery Ecommerce Template" class="mb-3 img-fluid" /></a>
                       <!-- action btn -->
                       <div class="card-product-action">
                           <a href="#!" class="btn-action" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="bi bi-eye"></i></a>
@@ -2024,3 +2049,10 @@
     </div>
   </section>
 </main>
+<script src="../assets/vendors/jquery.min.js"></script>
+<script src="../assets/vendors/countdown.js"></script>
+<script src="../assets/node_modules/slick-carousel/slick/slick.min.js"></script>
+<script src="../assets/vendors/slick-slider.js"></script>
+<script src="../assets/node_modules/tiny-slider/dist/min/tiny-slider.js"></script>
+<script src="../assets/vendors/tns-slider.js"></script>
+<script src="../assets/vendors/zoom.js"></script>
