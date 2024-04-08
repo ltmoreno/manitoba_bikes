@@ -1,4 +1,5 @@
 class Bike < ApplicationRecord
+  paginates_per 10
   has_many :bike_orders
   has_many :bike_carts
   has_many :bike_shipments

@@ -3,6 +3,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @brands = Brand.all
     @category = Category.find_by("LOWER(name) = ?", "#{params[:id].downcase}")
-    @bikes = @category.bikes
+    @bikes = @category.bikes.page params[:page]
   end
 end

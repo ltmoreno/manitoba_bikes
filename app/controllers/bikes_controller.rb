@@ -2,7 +2,7 @@ class BikesController < ApplicationController
   include BikesHelper
 
   def index
-    @bikes = Bike.all
+    @bikes = Bike.all.page params[:page]
   end
 
   def show
@@ -19,5 +19,6 @@ class BikesController < ApplicationController
     @bikes = @category.present? ?  @bikes.where(category: @category) : Bike.all
     #@bikes = @bikes.where(category: @category) if @category.present?
     @bikes = @bikes.where('model LIKE ? OR description like ?', "%#{@search_term}%", "%#{@search_term}%") if @search_term.present?
+    @bikes = @bikes.page params[:page]
   end
 end
