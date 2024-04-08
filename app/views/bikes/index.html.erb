@@ -42,12 +42,12 @@
           <div class="category-slider">
             <% get_categories.each do |c| %>
               <div class="item">
-                  <a href="../pages/shop-grid.html" class="text-decoration-none text-inherit">
+                  <a href="<%= category_path(c.name)%>" class="text-decoration-none text-inherit">
                     <div class="card card-product mb-lg-4">
-                        <div class="card-body text-center py-8">
-                          <%= image_tag c.bikes.first.photo.variant(:thumb), class:"mb-3", alt: "#{c.name} bike photo" %>
-                          <div class="text-truncate"><%= c.name %></div>
-                        </div>
+                      <div class="card-body text-center py-8">
+                        <%= image_tag c.bikes.first.photo.variant(:thumb), class:"mb-3", alt: "#{c.name} bike photo" %>
+                        <div class="text-truncate"><%= c.name %></div>
+                      </div>
                     </div>
                   </a>
               </div>

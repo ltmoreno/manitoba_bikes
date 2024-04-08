@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :bikes, only: [:index, :show]
   get '/filter', to: 'bikes#filter', as: 'bike_filter'
+  resources :categories, only: [:show]
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

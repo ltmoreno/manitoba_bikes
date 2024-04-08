@@ -10,7 +10,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item"><a href="#"><%= @category.name %></a></li>
+              <li class="breadcrumb-item"><a href="<%= category_path(@category.name)%>"><%= @category.name %></a></li>
               <li class="breadcrumb-item active" aria-current="page"><%= "#{@bike.brand.name} #{@bike.model}" %></li>
             </ol>
           </nav>
@@ -29,7 +29,7 @@
         <div class="col-md-6">
             <div class="ps-lg-10 mt-6 mt-md-0">
               <!-- content -->
-              <a href="#!" class="mb-4 d-block"><%= @category.name %> Bike</a>
+              <a href="<%= category_path(@category.name)%>" class="mb-4 d-block"><%= @category.name %> Bike</a>
               <!-- heading -->
               <h1 class="mb-1"><%= @bike.model %></h1>
 
