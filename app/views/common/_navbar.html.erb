@@ -7,9 +7,10 @@
 						<%= image_tag("logo/manitoba-bikes-logo.png", width: 160, alt: "Manitoba Bikes Logo") %>
 					</a>
 					<div class="w-100 ms-4 d-none d-lg-block">
-						<form action="#">
+						<%= form_tag(bike_filter_path, method: :get) do %>
 							<div class="input-group">
-								<select class="form-select" name="category">
+								<select class="form-select" name="category" id="category">
+									<option value="all">All Categories</option>
 									<% get_categories.each do |c|%>
 										<option value="<%= c.name %>"><%= c.name %></option>
 									<% end %>
@@ -33,7 +34,7 @@
 									</svg>
 								</button>
 							</div>
-						</form>
+						<% end%>
 					</div>
 				</div>
 				<div class="d-flex justify-content-between w-100 d-lg-none">
