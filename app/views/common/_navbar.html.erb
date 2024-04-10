@@ -268,13 +268,6 @@
 								<a class="nav-link" href="/">Home</a>
 							</li>
 							<li class="nav-item dropdown w-100 w-lg-auto">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="@@webRoot/pages/shop-cart.html">Shop Cart</a></li>
-									<li><a class="dropdown-item" href="@@webRoot/pages/shop-checkout.html">Shop Checkout</a></li>
-								</ul>
-							</li>
-							<li class="nav-item dropdown w-100 w-lg-auto">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Brands</a>
 								<ul class="dropdown-menu">
 									<% get_brands.each do |b|%>
@@ -448,9 +441,11 @@
 				<% end %>
 			</ul>
 			<!-- btn -->
+			<% if cart.present? %>
 			<div class="d-flex justify-content-between mt-4">
-				<a href="#!" class="btn btn-primary">Checkout</a>
+				<a href="<%= checkout_index_path %>" class="btn btn-primary">Checkout</a>
 			</div>
+			<% end %>
 		</div>
 	</div>
 </div>
