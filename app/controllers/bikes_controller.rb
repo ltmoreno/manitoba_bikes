@@ -16,7 +16,8 @@ class BikesController < ApplicationController
     @category = Category.where(name: params[:category]).first
     @search_term = params[:search]
 
-    @bikes = @category.present? ?  @bikes.where(category: @category) : Bike.all
+    @bikes = Bike.all
+    @bikes = @category.present? ? @bikes.where(category: @category) : @bikes
     #@bikes = @bikes.where(category: @category) if @category.present?
     @bikes = @bikes.where('model LIKE ? OR description like ?', "%#{@search_term}%", "%#{@search_term}%") if @search_term.present?
     @bikes = @bikes.page params[:page]

@@ -1,8 +1,11 @@
 class Bike < ApplicationRecord
   paginates_per 10
   has_many :bike_orders
+  has_many :orders, through: :bike_orders
   has_many :bike_carts
+  has_many :carts, through: :bike_carts
   has_many :bike_shipments
+  has_many :shipments, through: :bike_shipments
   belongs_to :brand
   belongs_to :category
   validates :model, presence: true

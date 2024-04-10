@@ -24,7 +24,9 @@
             <div><span class="text-dark"><%= number_to_currency(b.price) %></span></div>
             <!-- btn -->
             <div>
-                <a href="#!" class="btn btn-primary btn-sm">
+              <%= form_with url: cart_index_path, method: :post do %>
+                <%= hidden_field_tag(:id, b.id) %>
+                <%= button_tag class: "btn btn-primary btn-sm", type: "submit" do %>
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -40,7 +42,8 @@
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                   </svg>
                   Add
-                </a>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
