@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_09_041957) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_11_162025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -128,13 +128,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_09_041957) do
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
     t.string "lastname"
-    t.string "email"
     t.string "password"
     t.date "birthday"
     t.string "address"
     t.integer "province_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   create_table "orders", force: :cascade do |t|
@@ -169,8 +175,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_09_041957) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "title"
+    t.text "body"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_tasks_on_customer_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bike_carts", "bikes"
   add_foreign_key "bike_carts", "carts"
+  add_foreign_key "tasks", "customers"
 end
