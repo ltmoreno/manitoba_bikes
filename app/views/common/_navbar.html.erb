@@ -286,19 +286,18 @@
 							<li class="nav-item dropdown w-100 w-lg-auto">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="@@webRoot/pages/signin.html">Sign in</a></li>
-									<li><a class="dropdown-item" href="<%= new_customer_registration_path %>">Signup</a></li>
-									<li><a class="dropdown-item" href="@@webRoot/pages/forgot-password.html">Forgot Password</a></li>
-									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">My Account</a>
-										<ul class="dropdown-menu">
-											<li><a class="dropdown-item" href="@@webRoot/pages/account-orders.html">Orders</a></li>
-											<li><a class="dropdown-item" href="@@webRoot/pages/account-settings.html">Settings</a></li>
-											<li><a class="dropdown-item" href="@@webRoot/pages/account-address.html">Address</a></li>
-											<li><a class="dropdown-item" href="@@webRoot/pages/account-payment-method.html">Payment Method</a></li>
-											<li><a class="dropdown-item" href="@@webRoot/pages/account-notification.html">Notification</a></li>
-										</ul>
-									</li>
+									<% if customer_signed_in? %>
+										<li><a class="dropdown-item" href="@@webRoot/pages/account-orders.html">Orders</a></li>
+										<li><a class="dropdown-item" href="@@webRoot/pages/account-settings.html">Settings</a></li>
+										<li><a class="dropdown-item" href="@@webRoot/pages/account-address.html">Address</a></li>
+										<li><a class="dropdown-item" href="@@webRoot/pages/account-payment-method.html">Payment Method</a></li>
+										<li><a class="dropdown-item" href="@@webRoot/pages/account-notification.html">Notification</a></li>
+										<li><%= button_to 'Logout', destroy_customer_session_path, method: :delete, class:"dropdown-item"  %></li>
+									<% else %>
+										<li><a class="dropdown-item" href="<%= customer_session_path %>">Sign in</a></li>
+										<li><a class="dropdown-item" href="<%= new_customer_registration_path %>">Signup</a></li>
+										<li><a class="dropdown-item" href="@@webRoot/pages/forgot-password.html">Forgot Password</a></li>
+									<% end %>
 								</ul>
 							</li>
 						</ul>
