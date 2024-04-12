@@ -1,0 +1,7 @@
+<%= render partial: 'common/navbar' %>
+<div class="container">
+    <h1 class="mt-5">Payment Successful!</h1>
+    <p>Your payment for <strong>$<%= (@payment_intent.amount_received / 100.0).round(2) %></strong> was successfully processed.</p>
+    <p>Transaction ID: <%= @payment_intent.id %></p>
+    <p>Status: <%= @payment_intent.status %></p>
+</div>

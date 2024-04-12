@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def cart
-    Bike.find(session[:shopping_cart].keys)
+    unless session[:shopping_cart].nil?
+      Bike.find(session[:shopping_cart].keys)
+    end
   end
 
   def item_quantity(id)
