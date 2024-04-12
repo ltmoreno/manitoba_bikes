@@ -9,6 +9,7 @@ class Customer < ApplicationRecord
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_many :orders
+  has_many :bike_orders, through: :orders
   belongs_to :province
   has_one :cart
 
@@ -21,6 +22,10 @@ class Customer < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["address", "birthday", "created_at", "email", "first_name", "id", "id_value", "lastname", "password", "province_id", "updated_at"]
+    ["address", "birthday", "created_at", "email", "encrypted_password", "first_name", "id", "id_value", "lastname", "province_id", "remember_created_at", "reset_password_sent_at", "reset_password_token", "updated_at"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["cart", "orders", "province", "tasks"]
   end
 end
