@@ -16,6 +16,10 @@ class Customer < ApplicationRecord
     "#{first_name} #{lastname}"
   end
 
+  def full_address
+    "#{address}, #{province.name}"
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     ["address", "birthday", "created_at", "email", "first_name", "id", "id_value", "lastname", "password", "province_id", "updated_at"]
   end
