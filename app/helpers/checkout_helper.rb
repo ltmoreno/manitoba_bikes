@@ -8,12 +8,19 @@ module CheckoutHelper
     subtotal
   end
 
-  def cart_total
-    gst = current_customer.province.gst? ? current_customer.province.gst * cart_subtotal : 0
-    pst = current_customer.province.pst? ? current_customer.province.pst * cart_subtotal : 0
-    hst = current_customer.province.hst? ? current_customer.province.hst * cart_subtotal : 0
+  def gst
+    current_customer.province.gst? ? current_customer.province.gst * cart_subtotal : 0
+  end
 
-    # Here is the total tax to be charged
+  def pst
+    pst = current_customer.province.pst? ? current_customer.province.pst * cart_subtotal : 0
+  end
+
+  def hst
+    hst = current_customer.province.hst? ? current_customer.province.hst * cart_subtotal : 0
+  end
+
+  def cart_total
     cart_subtotal + gst + pst + hst
   end
 end
