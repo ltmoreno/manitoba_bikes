@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :tasks
+
+  devise_for :customers
+
   resources :bikes, only: [:index, :show]
   get '/filter', to: 'bikes#filter', as: 'bike_filter'
   resources :categories, only: [:show]
