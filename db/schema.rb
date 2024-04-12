@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_11_162025) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_12_023000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,7 +81,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_162025) do
   create_table "bike_orders", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "unit_price"
-    t.decimal "tax_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "bike_id"
@@ -128,7 +127,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_162025) do
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
     t.string "lastname"
-    t.string "password"
     t.date "birthday"
     t.string "address"
     t.integer "province_id"
@@ -148,6 +146,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_162025) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "full_address"
+    t.decimal "gst"
+    t.decimal "pst"
+    t.decimal "hst"
+    t.string "status", default: "new", null: false
   end
 
   create_table "pages", force: :cascade do |t|
