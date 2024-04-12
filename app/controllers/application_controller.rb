@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     session[:shopping_cart][id.to_s]
   end
 
-
   # devise parameters
   before_action :configure_permitted_parameters, if: :devise_controller?
 

@@ -12,6 +12,10 @@ class Customer < ApplicationRecord
   belongs_to :province
   has_one :cart
 
+  def fullname
+    "#{first_name} #{lastname}"
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     ["address", "birthday", "created_at", "email", "first_name", "id", "id_value", "lastname", "password", "province_id", "updated_at"]
   end
