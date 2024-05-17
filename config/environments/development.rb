@@ -74,8 +74,3 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
 end
-
-ENV['admin_email'] = "admin@manitobabikes.com"
-ENV['admin_password'] = "opAu66m6qEJCo9sJW94s"
-ENV["PUBLISHABLE_KEY"] = "pk_test_51P4aNaP4ABbGagVRRj0eLmbdJmTF8RZ8h94c6XqTxI7ztpwMUmwOEaticZulKwnrE0RqxEWyCSpS0fHuT5WBWnuy00IbFv3d2f"
-ENV["SECRET_KEY"] = "sk_test_51P4aNaP4ABbGagVRTdvJHFqp2D0qekKfPLCE5qObBpPfhPf8wOpwzbPVGsZ1akjm7gIdDaF0yfXQEz2dVAmawrtz0075gyMhCI"
