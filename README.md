@@ -1,3 +1,21 @@
+Manitoba Bikes
+A Ruby on Rails Fullstack ECommerce Project.
+
+One of the requirements to complete my Fullstack Web Development course is to create an eCommerce Website using Ruby on Rails. I took this opportunity to use my passion in cycling to create this website.
+
+Summary:
+
+- Bicycle data were scraped from Bikes and Beyond web site
+- PostgreSQL as the database
+- Bootstrap for UI
+- Active Admin for admin stuff
+- Active storage as file storage
+- Stripe to simulate test payment
+
+=========================================================
+Initial setup
+
+
 1.  Create new project using postgresql
     rails new manitoba_bikes --database=postgresql
 
